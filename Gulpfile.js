@@ -7,7 +7,7 @@ var gulp = require('gulp')
 gulp.task('test', function () {
   gulp.src('./test/*-test.js')
     .pipe(jshint({ asi: true, laxcomma: true }))
-    .pipe(mocha({ ui: 'bdd' }))
+    //.pipe(mocha({ ui: 'bdd' }))RS
 })
 
 gulp.task('lint', function () {
@@ -16,6 +16,6 @@ gulp.task('lint', function () {
 })
 
 gulp.task('nodemon', function () {
-  nodemon({ script: './server.js', options: '-e html,js' })
+  nodemon({ script: './express/app.js', options: '-e html,js' })
     .on('restart', 'lint')
 })
